@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Roboto italic";
+  src: url("../assets/fonts/Roboto/Roboto-LightItalic.ttf") format("truetype");
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+:root {
+  --color-bg: #fff;
+  --color-bg-variant: #0891b2;
+  --color-primary: rgb(8, 145, 178);
+  --color-primary-variant: #6dc7de;
+  --color-dark: #000;
+  --color-dark-variation: #585858;
+
+  --transition-primary: all 500ms ease;
+  --transition-primary-secondary: all 1 ease;
+
+  --container-width-xxl: 60%;
+  --container-width-large: 75%;
+  --container-width-medium: 85%;
+  --container-width-small: 90%;
+}
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+  background: var(--color-bg);
+  color: var(--color-white);
+  line-height: 1.7;
+}
+.container {
+  width: var(--container-width-large);
+  margin: 0 auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+}
+section {
+  margin-top: 8rem;
+}
+a {
+  color: var(--color-primary);
+  transition: var(--transition-primary);
+}
+a:hover {
+  color: var(--color-dark-variation);
+}
+.icon-link {
+  color: var(--color-dark);
+  transition: var(--transition-primary);
+}
+.icon-link:hover {
+  color: var(--color-primary-variant);
+}
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: var(--transition-primary);
+}
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+.staggered:nth-child(2) {
+    transition-delay: 200ms;
+}
+.staggered:nth-child(3) {
+    transition-delay: 400ms;
+}
+.staggered:nth-child(4) {
+    transition-delay: 600ms;
+}
+.staggered:nth-child(5) {
+    transition-delay: 800ms;
+}
+.staggered:nth-child(6) {
+    transition-delay: 1000ms;
+}
+@media(prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
