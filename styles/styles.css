@@ -119,9 +119,10 @@ nav {
   z-index: 2;
   position: fixed;
   left: 50%;
-  transform: translateX(-50%);
-  bottom: 2rem;
+  transform: translateY(50%);
+  left: 2rem;
   display: flex;
+  flex-direction: column;
   gap: 0.8rem;
   border-radius: 3rem;
   backdrop-filter: blur(15px);
@@ -131,7 +132,7 @@ nav a {
   padding: 0.9rem;
   border-radius: 50%;
   display: flex;
-  color: var(--color-dark);
+  color: var(--color-light-variation);
   font-size: 1.1rem;
 }
 
