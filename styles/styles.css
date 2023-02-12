@@ -26,7 +26,9 @@
   --color-primary: rgb(8, 145, 178);
   --color-primary-variant: #6dc7de;
   --color-dark: #000;
-  --color-dark-variation: #585858;
+  --color-dark-variation: rgba(0, 0, 0, 0.7);
+  --color-light: #fff;
+  --color-light-variation: rgba(255, 255, 255, 0.7);
 
   --transition-primary: all 500ms ease;
   --transition-primary-secondary: all 1 ease;
@@ -106,6 +108,49 @@ img {
 .staggered:nth-child(6) {
   transition-delay: 1000ms;
 }
+/*---------------------- Header Section -------------------------*/
+
+/*---------------------- Nav Section ----------------------------*/
+nav {
+  background: rgba(0, 0, 0, 0.3);
+  width: max-content;
+  display: block;
+  padding: 0.7rem 1.7rem;
+  z-index: 2;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2rem;
+  display: flex;
+  gap: 0.8rem;
+  border-radius: 3rem;
+  backdrop-filter: blur(15px);
+}
+nav a {
+  background: transparent;
+  padding: 0.9rem;
+  border-radius: 50%;
+  display: flex;
+  color: var(--color-dark);
+  font-size: 1.1rem;
+}
+
+nav a:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+nav a.active {
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+/*---------------------- About Section --------------------------*/
+
+/*---------------------- Experience Section ---------------------*/
+
+/*---------------------- Services Section -----------------------*/
+
+/*---------------------- Portfolio Section ----------------------*/
+
 .portfolio-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -138,6 +183,11 @@ img {
   gap: 1rem;
   margin-bottom: 1rem;
 }
+/*---------------------- Testimonials Section -------------------*/
+
+/*---------------------- Contact Section ------------------------*/
+
+/*---------------------- Media Queries --------------------------*/
 /*=== Media Queries (Animations) ===*/
 @media (prefers-reduced-motion) {
   .hidden {
