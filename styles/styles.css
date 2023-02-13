@@ -22,11 +22,11 @@
 }
 :root {
   --color-bg: #fff;
-  --color-bg-variant: #0891b2;
-  --color-primary: rgb(8, 145, 178);
-  --color-primary-variant: #6dc7de;
-  --color-dark: #000;
-  --color-dark-variation: rgba(0, 0, 0, 0.7);
+  --color-bg-variant: #F5F8FD;
+  --color-primary: #18D26E;
+  --color-primary-variant: #0d4a29;
+  --color-dark: #04140a;
+  --color-dark-variation: rgba(4, 20, 10, 0.7);
   --color-light: #fff;
   --color-light-variation: rgba(255, 255, 255, 0.7);
 
@@ -112,7 +112,7 @@ img {
 
 /*---------------------- Nav Section ----------------------------*/
 nav {
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--color-dark);
   width: max-content;
   display: block;
   padding: 0.7rem 1.7rem;
@@ -137,12 +137,13 @@ nav a {
 }
 
 nav a:hover {
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--color-dark-variation);
+  color: #18D26E;
 }
 
 nav a.active {
-  background: var(--color-primary);
-  color: var(--color-bg);
+  background: var(--);
+  color: var(--color-primary);
 }
 /*---------------------- About Section --------------------------*/
 
@@ -173,11 +174,11 @@ nav a.active {
 }
 .portfolio-item h3 {
   margin: 1.2rem 0 1rem;
-  color: var(--color-bg);
+  color: var(--color-dark);
 }
 .portfolio-item p {
   margin: 1.2rem 0 2rem;
-  color: var(--color-bg);
+  color: var(--color-dark);
 }
 .portfolio-item-cta {
   display: flex;
