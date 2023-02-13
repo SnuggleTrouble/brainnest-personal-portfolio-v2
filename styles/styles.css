@@ -12,11 +12,11 @@
   font-family: "Roboto italic";
   src: url("../assets/fonts/Roboto/Roboto-LightItalic.ttf") format("truetype");
 }
+/*---------------------- General Setup -------------------------*/
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Roboto", sans-serif;
   list-style: none;
   text-decoration: none;
 }
@@ -28,7 +28,7 @@
   --color-dark: #04140a;
   --color-dark-variation: rgba(4, 20, 10, 0.7);
   --color-light: #fff;
-  --color-light-variation: rgba(255, 255, 255, 0.7);
+  --color-light-variation: #a8b4ad;
 
   --transition-primary: all 500ms ease;
   --transition-primary-secondary: all 1 ease;
@@ -46,7 +46,8 @@ html {
 }
 body {
   background: var(--color-bg);
-  color: var(--color-white);
+  color: var(--color-dark);
+  font-family: "Roboto", sans-serif;
   line-height: 1.7;
 }
 .container {
@@ -109,42 +110,74 @@ img {
   transition-delay: 1000ms;
 }
 /*---------------------- Header Section -------------------------*/
-
-/*---------------------- Nav Section ----------------------------*/
-nav {
-  background: var(--color-dark);
-  width: max-content;
-  display: block;
-  padding: 0.7rem 1.7rem;
-  z-index: 2;
+#header {
   position: fixed;
-  left: 50%;
-  transform: translateY(50%);
-  left: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  border-radius: 3rem;
-  backdrop-filter: blur(15px);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  max-width: 300px;
+  padding: 0 15px;
+  background: var(--color-dark);
+  z-index: 2;
+  transition: var(--transition-primary);
 }
-nav a {
-  background: transparent;
-  padding: 0.9rem;
+#header .profile-img {
+  margin: 15px auto;
+  display: block;
+  width: 120px;
+  border: 0.8rem solid var(--color-dark-variation);
   border-radius: 50%;
+}
+/*---------------------- Navigation Section ---------------------*/
+.nav-menu {
+  padding: 30px 0 0 0;
+}
+
+.nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu>ul>li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-menu a,
+.nav-menu a:focus {
   display: flex;
+  align-items: center;
   color: var(--color-light-variation);
-  font-size: 1.1rem;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 8px;
+  transition: 0.3s;
+  font-size: 15px;
 }
 
-nav a:hover {
-  background: var(--color-dark-variation);
-  color: #18D26E;
+.nav-menu a i,
+.nav-menu a:focus i {
+  font-size: 24px;
+  padding-right: 0.5rem;
+  color: var(--color-light-variation);
 }
 
-nav a.active {
-  background: var(--);
+.nav-menu a:hover,
+.nav-menu .active,
+.nav-menu .active:focus,
+.nav-menu li:hover>a {
+  color: var(--color-light);
+}
+
+.nav-menu a:hover i,
+.nav-menu .active i,
+.nav-menu .active:focus i,
+.nav-menu li:hover>a i {
   color: var(--color-primary);
 }
+
+/*---------------------- Hero Section --------------------------*/
+
 /*---------------------- About Section --------------------------*/
 
 /*---------------------- Experience Section ---------------------*/
@@ -152,7 +185,6 @@ nav a.active {
 /*---------------------- Services Section -----------------------*/
 
 /*---------------------- Portfolio Section ----------------------*/
-
 .portfolio-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
