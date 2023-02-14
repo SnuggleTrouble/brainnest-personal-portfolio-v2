@@ -40,6 +40,7 @@
 }
 html {
   scroll-behavior: smooth;
+  font-size: 18px;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -179,6 +180,83 @@ img {
 /*---------------------- Hero Section --------------------------*/
 
 /*---------------------- About Section --------------------------*/
+.about {
+  margin-bottom: 2rem;
+}
+.about-details {
+  display: flex;
+}
+.profile-pic {
+  max-width: 25rem;
+  height: auto;
+}
+.about-details>article {
+  margin-left: 1rem;
+}
+.about-details>article>* {
+  margin-bottom: 1rem;
+}
+.about-details>article>aside {
+  display: flex;
+  justify-content: flex-start;
+}
+.about-details>article>aside>* {
+  width: 50%;
+}
+.about-details ul>li:before {
+  content: '> ';
+  color: var(--color-primary)
+}
+.facts,
+.skills,
+.experience {
+  margin-top: 3rem;
+}
+.about>p,
+.facts>p,
+.skills>p,
+.experience>p {
+  margin: 1rem 0;
+}
+.facts>aside {
+  display: flex;
+}
+.facts>aside>figure {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+.facts>aside>figure>* {
+  min-width: 30%;
+}
+.facts>aside>figure>i {
+  font-size: 3rem;
+}
+.facts>aside>figure>figcaption>p:first-child {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.skills>div>ul {
+  display: flex;
+}
+.skills>div>ul>* {
+  font-size: 1.8rem;
+  padding: 1rem;
+}
+.skills>div>ul>li>i {
+  font-size: 3rem;
+}
+.resume {
+  display: flex;
+}
+.resume>* {
+  max-width: 50%;
+}
+.experience {
+  border: 2px solid tomato;
+  padding-top: 5rem;
+}
+
 
 /*---------------------- Experience Section ---------------------*/
 
