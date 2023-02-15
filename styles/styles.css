@@ -58,6 +58,12 @@ main {
   width: var(--container-width-large);
   margin: 0 auto;
 }
+main > section:nth-child(even){
+  background-color: rgba(244, 244, 255, 0.938);
+}
+main > section {
+  padding: calc(1vw + 0.3rem) 0;
+}
 h1,
 h2,
 h3,
@@ -327,15 +333,10 @@ img {
 /*---------------------- Services Section -----------------------*/
 
 /*---------------------- Portfolio Section ----------------------*/
-#portfolio {
-  background-color: rgba(244, 244, 255, 0.938);
-  padding: 2% 0;
-}
 
 .portfolio-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 3% 0;
   gap: 3%;
   row-gap: 5.5%;
 }
