@@ -148,7 +148,7 @@ img {
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 0.8rem solid var(--color-dark-variation);
+  border: 0.4rem solid var(--color-light-variation);
   border-radius: 50%;
 }
 /*---------------------- Navigation Section ---------------------*/
