@@ -28,7 +28,7 @@
   --color-dark: #04140a;
   --color-dark-variation: rgba(4, 20, 10, 0.7);
   --color-light: #fff;
-  --color-light-variation: #a8b4ad;
+  --color-light-variation: rgba(209, 210, 209, 0.7);
 
   --transition-primary: all 500ms ease;
   --transition-primary-secondary: all 1 ease;
@@ -51,6 +51,9 @@ body {
   font-family: "Roboto", sans-serif;
   line-height: 1.7;
 }
+main {
+  margin-left: 100px;
+}
 .container {
   width: var(--container-width-large);
   margin: 0 auto;
@@ -62,8 +65,27 @@ h4,
 h5 {
   font-weight: 500;
 }
-section {
-  margin-top: 8rem;
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h2::after {
+  content: "";
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 5rem;
+    background-color: var(--color-primary);
+}
+h3 {
+  font-weight: 600;
+}
+h3,
+h4,
+p {
+  font-size: 1rem;
 }
 a {
   color: var(--color-primary);
@@ -182,6 +204,8 @@ img {
 /*---------------------- About Section --------------------------*/
 .about {
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 .about-details {
   display: flex;
@@ -203,34 +227,38 @@ img {
 .about-details>article>aside>* {
   width: 50%;
 }
+.about-details>article>aside>ul {
+  margin: 1.5rem 0;
+}
 .about-details ul>li:before {
   content: '> ';
   color: var(--color-primary)
 }
+.about,
 .facts,
-.skills,
-.experience {
+.skills{
   margin-top: 3rem;
 }
 .about>p,
 .facts>p,
-.skills>p,
-.experience>p {
+.skills>p {
   margin: 1rem 0;
 }
 .facts>aside {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 .facts>aside>figure {
-  display: flex;
-  align-items: center;
-  margin-left: 1rem;
-}
-.facts>aside>figure>* {
-  min-width: 30%;
+  max-width: 20%;
 }
 .facts>aside>figure>i {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  padding-top: 1rem;
+  align-self: center;
+}
+.facts>aside>figure>p {
+  display: inline-block;
 }
 .facts>aside>figure>figcaption>p:first-child {
   font-size: 2rem;
@@ -238,13 +266,21 @@ img {
 }
 .skills>div>ul {
   display: flex;
+  flex-wrap: wrap;
 }
 .skills>div>ul>* {
-  font-size: 1.8rem;
-  padding: 1rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
 }
 .skills>div>ul>li>i {
-  font-size: 3rem;
+  font-size: 1.5rem;
+}
+/*---------------------- Experience Section ---------------------*/
+.experience {
+  margin-top: 3rem;
+}
+.experience>p {
+  margin: 1rem 0;
 }
 .resume {
   display: flex;
@@ -252,14 +288,42 @@ img {
 .resume>* {
   max-width: 50%;
 }
-.experience {
-  border: 2px solid tomato;
-  padding-top: 5rem;
+.resume h3 {
+  font-weight: bold;
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
 }
-
-
-/*---------------------- Experience Section ---------------------*/
-
+.resume h4 {
+  font-weight: bold;
+}
+.resume-card h4:before {
+  content: "";
+  position: absolute;
+  width: 1.45rem;
+  height: 1.45rem;
+  border-radius: 50%;
+  left: -0.79rem;
+  top: 0rem;
+  background-color: var(--color-primary);
+}
+.resume-card {
+  padding: 0rem 0 2rem 1.2rem;
+  margin-top: -2px;
+  border-left: 3px solid var(--color-primary);
+  position: relative;
+  top: 0.2rem;
+}
+.resume-card>* {
+  padding: 0.25rem;
+}
+.resume-card>.years {
+  background-color: var(--color-light-variation);
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+}
+.resume-card>ul>li {
+  list-style: disc;
+}
 /*---------------------- Services Section -----------------------*/
 
 /*---------------------- Portfolio Section ----------------------*/
@@ -310,15 +374,51 @@ img {
 }
 /*=== Media Queries (Medium Devices) ===*/
 @media screen and (max-width: 1024px) {
+  main {
+    margin-left: 0;
+  }
     .portfolio-container {
         grid-template-columns: 1fr 1fr;
         gap: 1.2rem;
     }
+    #header {
+      display: none;
+    }
+    
+    .about-details {
+      flex-direction: column;
+    }
+    .profile-pic{
+      max-width: 100%;
+      align-self: center;
+    }
+    .about-details>article {
+      margin-left: 0;
+    }
+    .about-details>article>h3 {
+      margin-top: 1rem;
+    }
+    .facts>aside>figure {
+      max-width: 40%;
+    }
 }
 /*=== Media Queries (Small Devices) ===*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
     .portfolio-container {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-}
+    .about-details>article>aside {
+      display: flex;
+      flex-direction: column;
+    }
+    .about-details>article>aside>ul {
+      width: 100%;
+    }
+    .resume {
+      flex-direction: column;
+    }
+    .resume>* {
+      max-width: 100%;
+    } 
+  }
