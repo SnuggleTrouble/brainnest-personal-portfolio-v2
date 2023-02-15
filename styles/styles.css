@@ -327,38 +327,141 @@ img {
 /*---------------------- Services Section -----------------------*/
 
 /*---------------------- Portfolio Section ----------------------*/
+#portfolio {
+  background-color: rgba(244, 244, 255, 0.938);
+  padding: 2% 0;
+}
+
 .portfolio-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+  padding: 3% 0;
+  gap: 3%;
 }
+
 .portfolio-item {
-  background: var(--color-bg-variant);
-  padding: 1.2rem;
-  border-radius: 2rem;
-  border: 1px solid transparent;
   transition: var(--transition-primary);
-}
-.portfolio-item:hover {
-  border-color: var(--color-primary-variant);
-}
-.portfolio-item-image {
-  border-radius: 1.5rem;
+  position: relative;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
   overflow: hidden;
 }
+
+.portfolio-item::before {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  top: 30px;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  transition: all 1s ease-in-out;
+  z-index: 2;
+  opacity: 0;
+}
+
+.portfolio-item-image {
+  padding-top: 75%;
+  position: relative;
+}
+
+.portfolio-item-image img {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.portfolio-item-hover {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: all 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.portfolio-item-hover::before {
+  display: block;
+  content: "";
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 45px;
+  left: 45px;
+  border-top: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+  transition: all 1s ease-in-out;
+  z-index: 5000;
+}
+
+.portfolio-item-hover::after {
+  display: block;
+  content: "";
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 45px;
+  right: 45px;
+  border-bottom: 3px solid #ffffff;
+  border-right: 3px solid #ffffff;
+  transition: all 1s ease-in-out;
+  z-index: 5000;
+}
+
+.portfolio-item:hover::before {
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.portfolio-item:hover .portfolio-item-hover {
+  opacity: 1;
+  z-index: 3;
+}
+
+.portfolio-item:hover .portfolio-item-hover::before {
+  top: 15px;
+  left: 15px;
+}
+
+.portfolio-item:hover .portfolio-item-hover::after{
+  bottom: 15px;
+  right: 15px;
+}
+
+.portfolio-item-description {
+  display: none;
+}
+
 .portfolio-item h3 {
   margin: 1.2rem 0 1rem;
   color: var(--color-dark);
 }
+
 .portfolio-item p {
   margin: 1.2rem 0 2rem;
-  color: var(--color-dark);
+  color: var(--color-light);
 }
+
 .portfolio-item-cta {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
 }
+
 /*---------------------- Testimonials Section -------------------*/
 
 /*---------------------- Contact Section ------------------------*/
@@ -384,7 +487,7 @@ img {
     #header {
       display: none;
     }
-    
+
     .about-details {
       flex-direction: column;
     }
@@ -420,5 +523,5 @@ img {
     }
     .resume>* {
       max-width: 100%;
-    } 
+    }
   }
