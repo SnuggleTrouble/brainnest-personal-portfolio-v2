@@ -85,7 +85,7 @@ h3 {
 h3,
 h4,
 p {
-  font-size: 1rem;
+  font-size:  calc(0.6vw + 0.5rem);;
 }
 a {
   color: var(--color-primary);
@@ -99,7 +99,7 @@ a:hover {
   transition: var(--transition-primary);
 }
 .icon-link:hover {
-  color: var(--color-primary-variant);
+  color: var(--color-primary);
 }
 img {
   display: block;
@@ -337,12 +337,13 @@ img {
   grid-template-columns: repeat(3, 1fr);
   padding: 3% 0;
   gap: 3%;
+  row-gap: 5.5%;
 }
 
 .portfolio-item {
   transition: var(--transition-primary);
   position: relative;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   z-index: 1;
   overflow: hidden;
 }
@@ -350,7 +351,7 @@ img {
 .portfolio-item::before {
   content: "";
   position: absolute;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   top: 30px;
   bottom: 30px;
   left: 30px;
@@ -372,6 +373,7 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
+  object-position: top;
 }
 
 .portfolio-item-hover {
@@ -442,24 +444,24 @@ img {
   right: 15px;
 }
 
-.portfolio-item-description {
-  display: none;
-}
-
-.portfolio-item h3 {
-  margin: 1.2rem 0 1rem;
-  color: var(--color-dark);
-}
-
-.portfolio-item p {
-  margin: 1.2rem 0 2rem;
+.portfolio-item-hover {
   color: var(--color-light);
 }
 
-.portfolio-item-cta {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
+.portfolio-item-hover>p {
+  font-size: calc(0.6vw + 0.5rem);
+  color: var(--color-light);
+  margin: 0.3rem 0;
+}
+
+.portfolio-item-hover > div > a {
+  font-size: calc(0.9vw + 0.5rem);
+  color: var(--color-light);
+  margin: 0 0.3rem;
+}
+
+.portfolio-item-description {
+  display: none;
 }
 
 /*---------------------- Testimonials Section -------------------*/
