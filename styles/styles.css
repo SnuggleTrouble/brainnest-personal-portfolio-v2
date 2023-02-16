@@ -91,7 +91,7 @@ h3 {
 h3,
 h4,
 p {
-  font-size:  calc(0.6vw + 0.5rem);;
+  font-size:  calc(0.6vw + 0.5rem);
 }
 a {
   color: var(--color-primary);
@@ -478,7 +478,6 @@ img {
   display: none;
   padding-top: 100%;
   position: relative;
-  transition: all 2s ease-in-out;
 }
 
 .swiper-item {
@@ -500,7 +499,7 @@ img {
   border-radius: 20px;
   position: relative;
   background-color: var(--color-bg-variant);
-  font-size: calc(0.6vw + 0.2rem);
+  font-size: calc(0.5vw + 0.2rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -533,6 +532,7 @@ img {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(100%);
+  transition: all 2s ease-in-out;
 }
 
 .swiper-show {
