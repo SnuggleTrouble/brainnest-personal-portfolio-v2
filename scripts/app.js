@@ -78,3 +78,23 @@ radioElements.forEach(element => {
 window.addEventListener ("resize", () => {
   displaySwiperElements(value);
 })
+
+//function that moves to next swiper element
+const swipeNext = () => {
+  for (var i = 0; i < radioElements.length; ++i) {
+    if (radioElements[i].checked == true) {
+      if (i == radioElements.length - 1) {
+        radioElements[0].checked = true;
+        displaySwiperElements(radioElements[0].value);
+      } else {
+        radioElements[i + 1].checked = true;
+        displaySwiperElements(radioElements[i+1].value);
+      }
+      break;
+    }
+  }
+}
+//timer that every 5s swipes
+setInterval(swipeNext, 5000)
+
+

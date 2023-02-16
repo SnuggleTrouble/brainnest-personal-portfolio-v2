@@ -21,7 +21,7 @@
   text-decoration: none;
 }
 :root {
-  --color-bg: #fff;
+  --color-bg: #fdfdff;
   --color-bg-variant: #F5F8FD;
   --color-primary: #18D26E;
   --color-primary-variant: #0d4a29;
@@ -59,7 +59,7 @@ main {
   margin: 0 auto;
 }
 main > section:nth-child(even){
-  background-color: rgba(244, 244, 255, 0.938);
+  background-color: var(--color-bg-variant);
 }
 main > section {
   padding: calc(1vw + 0.3rem) 0;
@@ -476,7 +476,7 @@ img {
 
 .swiper-item-wrap {
   display: none;
-  padding-top: 75%;
+  padding-top: 100%;
   position: relative;
 }
 
@@ -486,7 +486,39 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-item > p {
+  height: 40%;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 20px;
+  position: relative;
+  background-color: var(--color-bg-variant);
+  font-size: calc(0.6vw + 0.2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.swiper-item > p::after {
+  content: "";
+  position: absolute;
+  border-top: 30px solid var(--color-bg-variant);
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+  bottom: -30px;
+  left: calc(50% - 30px);
+}
+
+.swiper-item > img {
+  margin-top: 40px;
+  border-radius: 50%;
+  width: 40%;
 }
 
 .radio-wrap {
