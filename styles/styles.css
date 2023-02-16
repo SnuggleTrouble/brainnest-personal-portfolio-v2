@@ -478,6 +478,7 @@ img {
   display: none;
   padding-top: 100%;
   position: relative;
+  transition: all 2s ease-in-out;
 }
 
 .swiper-item {
@@ -526,6 +527,18 @@ img {
   justify-content: center;
   column-gap: 1%;
   padding: 2% 0;
+}
+
+.swiper-hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(100%);
+}
+
+.swiper-show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
 }
 
 /*---------------------- Contact Section ------------------------*/

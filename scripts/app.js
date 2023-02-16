@@ -39,16 +39,21 @@ if (screen.width > 1024) {
   swiperElements[swiperElements.length - 1].style.display = "block";
   swiperElements[0].style.display = "block";
   swiperElements[1].style.display = "block";
+  swiperElements[swiperElements.length - 1].classList.add("swiper-show");
+  swiperElements[0].classList.add("swiper-show");
+  swiperElements[1].classList.add("swiper-show");
 } else {
   //showing only one element
   swiperWrap.appendChild(swiperElements[0]);
   swiperElements[0].style.display = "block";
+  swiperElements[0].classList.add("swiper-show");
 }
 
 let value = 0;
 
 const displaySwiperElements = (value) => {
   swiperElements.forEach (element => {
+    element.classList.remove("swiper-show");
     element.style.display = "none";
   })
   //display 3 elements only on screens bigger that 1024px
@@ -59,9 +64,15 @@ const displaySwiperElements = (value) => {
     swiperElements[Number(value) === 0 ? swiperElements.length - 1 : Number(value) - 1].style.display = "block";
     swiperElements[Number(value)].style.display = "block";
     swiperElements[Number(value) >= swiperElements.length - 1 ? Number(value) + 1 - swiperElements.length : Number(value) + 1].style.display = "block";
+    setTimeout(() => {
+      swiperElements[Number(value) === 0 ? swiperElements.length - 1 : Number(value) - 1].classList.add("swiper-show");
+      swiperElements[Number(value)].classList.add("swiper-show");
+      swiperElements[Number(value) >= swiperElements.length - 1 ? Number(value) + 1 - swiperElements.length : Number(value) + 1].classList.add("swiper-show");
+    }, 20);
   } else {
     swiperWrap.appendChild(swiperElements[Number(value)]);
     swiperElements[Number(value)].style.display = "block";
+    swiperElements[Number(value)].classList.add("swiper-show");
   }
 }
 
@@ -71,6 +82,8 @@ radioElements.forEach(element => {
   element.addEventListener("click", (event) => {
     value = event.target.value;
     displaySwiperElements(value);
+    clearInterval(swipeTimer);
+    swipeTimer = setInterval(swipeNext, 5000)
   })
 })
 
@@ -95,6 +108,6 @@ const swipeNext = () => {
   }
 }
 //timer that every 5s swipes
-setInterval(swipeNext, 5000)
+let swipeTimer = setInterval(swipeNext, 5000)
 
 
