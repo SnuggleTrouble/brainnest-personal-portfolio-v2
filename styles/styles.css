@@ -467,6 +467,34 @@ img {
 
 /*---------------------- Testimonials Section -------------------*/
 
+.swiper-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 3%;
+  margin: 2% 0;
+}
+
+.swiper-item-wrap {
+  display: none;
+  padding-top: 75%;
+  position: relative;
+}
+
+.swiper-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: aqua;
+}
+
+.radio-wrap {
+  display: flex;
+  justify-content: center;
+  column-gap: 1%;
+}
+
 /*---------------------- Contact Section ------------------------*/
 
 /*---------------------- Footer Section -------------------------*/
