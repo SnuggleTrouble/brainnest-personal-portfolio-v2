@@ -598,6 +598,23 @@ img {
   padding: 2% 0;
 }
 
+.radio-button {
+  height: 1rem;
+  width: 1rem;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 50%;
+  background: #fff;
+  border: 0.1rem solid grey;
+  cursor: pointer;
+}
+
+.radio-button:checked {
+  box-shadow: 0 0 0 1px var(--color-primary);
+  background-color: var(--color-primary);
+  border: 0.2rem solid #fff;
+}
+
 .swiper-hidden {
   opacity: 0;
   filter: blur(5px);
