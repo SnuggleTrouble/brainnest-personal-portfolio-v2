@@ -471,7 +471,7 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 3%;
-  margin: 2% 0;
+  padding: 2% 0;
 }
 
 .swiper-item-wrap {
@@ -493,6 +493,7 @@ img {
   display: flex;
   justify-content: center;
   column-gap: 1%;
+  padding: 2% 0;
 }
 
 /*---------------------- Contact Section ------------------------*/
@@ -535,6 +536,10 @@ img {
     .facts>aside>figure {
       max-width: 40%;
     }
+
+    .swiper-wrap {
+      grid-template-columns: 1fr;
+    }
 }
 /*=== Media Queries (Small Devices) ===*/
 @media screen and (max-width: 660px) {
@@ -554,5 +559,9 @@ img {
     }
     .resume>* {
       max-width: 100%;
+    }
+
+    .swiper-wrap {
+      grid-template-columns: 1fr;
     }
   }
