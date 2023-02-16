@@ -31,41 +31,52 @@ for (let i = 0; i < swiperElements.length; i++){
 }
 
 //display 3 elements only on screens bigger that 1024px
+swiperWrap.innerHTML="";
 if (screen.width > 1024) {
   //showing the last and first 2 swiper elements
   swiperWrap.appendChild(swiperElements[swiperElements.length - 1]);
   swiperWrap.appendChild(swiperElements[0]);
   swiperWrap.appendChild(swiperElements[1]);
-  swiperElements[swiperElements.length - 1].style.display = "block";
-  swiperElements[0].style.display = "block";
-  swiperElements[1].style.display = "block";
+  setTimeout(() => {
+    swiperElements[swiperElements.length - 1].classList.add("swiper-show");
+    swiperElements[0].classList.add("swiper-show");
+    swiperElements[1].classList.add("swiper-show");
+  }, 20);
 } else {
   //showing only one element
   swiperWrap.appendChild(swiperElements[0]);
-  swiperElements[0].style.display = "block";
+  setTimeout(() => {
+    swiperElements[0].classList.add("swiper-show");
+  }, 20);
 }
 
-let value = 0;
-
 const displaySwiperElements = (value) => {
+  swiperWrap.innerHTML="";
   swiperElements.forEach (element => {
-    element.style.display = "none";
+    element.classList.remove("swiper-show");
   })
   //display 3 elements only on screens bigger that 1024px
   if (screen.width > 1024) {
-    swiperElements[Number(value) === 0 ? swiperElements.length - 1 : Number(value) - 1].style.display = "block";
-    swiperElements[Number(value)].style.display = "block";
-    swiperElements[Number(value) >= swiperElements.length - 1 ? Number(value) + 1 - swiperElements.length : Number(value) + 1].style.display = "block";
     swiperWrap.appendChild(swiperElements[Number(value) === 0 ? swiperElements.length - 1 : Number(value) - 1]);
     swiperWrap.appendChild(swiperElements[Number(value)]);
     swiperWrap.appendChild(swiperElements[Number(value) >= swiperElements.length - 1 ? Number(value) + 1 - swiperElements.length : Number(value) + 1]);
+    setTimeout(() => {
+      swiperElements[Number(value) === 0 ? swiperElements.length - 1 : Number(value) - 1].classList.add("swiper-show");
+      swiperElements[Number(value)].classList.add("swiper-show");
+      swiperElements[Number(value) >= swiperElements.length - 1 ? Number(value) + 1 - swiperElements.length : Number(value) + 1].classList.add("swiper-show");
+    }, 20);
   } else {
     swiperWrap.appendChild(swiperElements[Number(value)]);
-    swiperElements[Number(value)].style.display = "block";
+    setTimeout(() => {
+      swiperElements[Number(value)].classList.add("swiper-show");
+    }, 20);
   }
   clearInterval(swipeTimer);
   swipeTimer = setInterval(swipeNext, 5000);
 }
+
+//value is used to store the last event on the radio button click
+let value = 0;
 
 //showing different swiper elements depending on the clicked radio button
 const radioElements = document.querySelectorAll(".radio-button");
@@ -92,23 +103,10 @@ const swipeNext = () => {
   }
 }
 
-//timer that every 5s swipes
+// timer that every 5s swipes
 let swipeTimer = setInterval(swipeNext, 5000)
 
 // showing one or more elements depending on widow size
 window.addEventListener ("resize", () => {
   displaySwiperElements(value);
 })
-
-const swiperObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("swiper-show");
-    }else {
-      entry.target.classList.remove("swiper-show");
-    }
-  });
-});
-
-const swiperHiddenElements = document.querySelectorAll(".swiper-hidden");
-swiperHiddenElements.forEach((el) => swiperObserver.observe(el));

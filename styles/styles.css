@@ -544,9 +544,10 @@ img {
 }
 
 .swiper-item-wrap {
-  display: none;
+  /* display: none; */
   padding-top: 100%;
   position: relative;
+  transition: all 2s ease-in-out;
 }
 
 .swiper-item {
