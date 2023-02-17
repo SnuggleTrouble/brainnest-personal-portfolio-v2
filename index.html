@@ -49,7 +49,7 @@
       <!--------------------- Hero Section --------------------->
     <section id="hero">
       <div class="hero-container">
-        <h1>Hossein Ghanbari</h1>
+        <h1>Random Person</h1>
         <p>I'm a <span>Web Developer, Photographer, Designer, Freelancer</span></p>
       </div>
     </section>
@@ -514,27 +514,26 @@
 
         <div class="section-title">
           <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
-        <div class="row" data-aos="fade-in">
+        <div class="row contact-section" data-aos="fade-in">
 
-          <div class="col-lg-5 d-flex align-items-stretch">
+          <div>
             <div class="info">
               <div class="address">
-                <i class="bi bi-geo-alt"></i>
+                <i class="fa fa-location"></i>
                 <h4>Location:</h4>
                 <p>A108 Adam Street, New York, NY 535022</p>
               </div>
 
               <div class="email">
-                <i class="bi bi-envelope"></i>
+                <i class="fa fa-envelope"></i>
                 <h4>Email:</h4>
                 <p>info@example.com</p>
               </div>
 
               <div class="phone">
-                <i class="bi bi-phone"></i>
+                <i class="fa fa-phone"></i>
                 <h4>Call:</h4>
                 <p>+1 5589 55488 55s</p>
               </div>
@@ -544,85 +543,26 @@
 
           </div>
 
-          <section id="form-input">
-            <div class="form-title">
-              <h2>Let's do this!</h2>
+          <form>
+            <div>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
             </div>
-            <div class="form-user-details">
-              <div class="form-input-box">
-                <label for="first-name">FIRST NAME</label>
-                <input
-                  type="text"
-                  name="first-name"
-                  id="first-name"
-                  placeholder=" "
-                  pattern="[A-Za-z]+[A-Za-z -]+[A-Za-z]+"
-                  title="*Names must start and end with a letter and can contain only letters, spaces and -."
-                  required />
-                <p>*Names must start and end with a letter and can contain only letters, spaces or -.</p>
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
             </div>
-              <div class="form-input-box">
-                <label for="last-name">LAST NAME</label>
-                <input
-                  type="text"
-                  name="last-name"
-                  id="last-name"
-                  placeholder=" "
-                  pattern="[A-Za-z]+[A-Za-z -]+[A-Za-z]+"
-                  title="*Names must start and end with a letter and can contain only letters, spaces and -."
-                  required />
-                <p>*Names must start and end with a letter and can contain only letters, spaces or -.</p>
+            <div>
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required>
             </div>
-              <div class="form-input-box">
-                <label for="email">EMAIL</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder=" "
-                  required />
-                <p>*Email format must be username@domain.</p>
+            <div>
+              <label for="confirm-password">Confirm Password:</label>
+              <input type="password" id="confirm-password" name="confirm-password" required>
             </div>
-              <div class="form-input-box">
-                <label for="phone-number">PHONE NUMBER</label>
-                <input
-                  type="tel"
-                  name="phone-number"
-                  id="phone-number"
-                  placeholder=" "
-                  pattern="[+][0-9|-]{2,5}[0-9]{9,11}"
-                  title="Format: country code (+ max 5 digits) + number (9-11 digits) &#010;Ex: +41773456278"
-                  required />
-                <p>*Phone number format must be country code (+ max 5 digits) + number (9-11 digits) &#010;Ex: +41773456278.</p>
-            </div>
-              <div class="form-input-box">
-                <label for="password">PASSWORD</label>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder=" "
-                  pattern="^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$"
-                  title="Password needs to be at least 8 caracters and to contain at least one UpperCase letter, one lowerCase letter, one digit and one symbol"
-                  required />
-                <p>*Password needs to be at least 8 caracters and to contain at least one UpperCase letter, one lowerCase letter, one digit and one symbol.</p>
-              <p id="password-no-match">*Passwords do not match!</p>
-            </div>
-              <div class="form-input-box">
-                <label for="password">CONFIRM PASSWORD</label>
-                <input
-                  type="password"
-                  name="password-confirm"
-                  id="password-confirm"
-                  placeholder=" "
-                  pattern="^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$"
-                  title="Password needs to be at least 8 caracters and to contain at least one UpperCase letter, one lowerCase letter, one digit and one symbol"
-                  required />
-                <p>*Password needs to be at least 8 caracters and to contain at least one UpperCase letter, one lowerCase letter, one digit and one symbol.</p>
-            </div>
-            </div>
-          <button class="reset-btn" type="reset">Reset</button>
-        </section>
+            <button type="submit">Sign Up</button>
+          </form>
+          
 
         </div>
 
