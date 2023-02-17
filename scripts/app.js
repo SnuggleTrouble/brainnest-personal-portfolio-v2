@@ -11,13 +11,24 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((el) => observer.observe(el));
 
+const swiperObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("swiper-show");
+    }
+  });
+});
+
+const swiperHiddenElements = document.querySelectorAll(".swiper-hidden");
+swiperHiddenElements.forEach((el) => swiperObserver.observe(el));
+
 //getting the DOM elements we need for the swiper
 const swiperWrap = document.querySelector(".swiper-wrap");
 const swiperElements = document.querySelectorAll(".swiper-item-wrap");
 const radioWrap = document.querySelector(".radio-wrap");
 const width = document.querySelector("#width");
 // adding radio buttons for how many elements we have
-for (let i = 0; i < swiperElements.length; i++){
+for (let i = 0; i < swiperElements.length; i++) {
   const input = document.createElement("input");
   input.setAttribute("type", "radio");
   input.setAttribute("name", "radio");
@@ -31,28 +42,20 @@ for (let i = 0; i < swiperElements.length; i++){
 }
 
 //display 3 elements only on screens bigger that 1024px
-swiperWrap.innerHTML="";
+swiperWrap.innerHTML = "";
 if (window.innerWidth > 1450) {
   //showing the last and first 2 swiper elements
   swiperWrap.appendChild(swiperElements[swiperElements.length - 1]);
   swiperWrap.appendChild(swiperElements[0]);
   swiperWrap.appendChild(swiperElements[1]);
-  setTimeout(() => {
-    swiperElements[swiperElements.length - 1].classList.add("swiper-show");
-    swiperElements[0].classList.add("swiper-show");
-    swiperElements[1].classList.add("swiper-show");
-  }, 20);
 } else {
   //showing only one element
   swiperWrap.appendChild(swiperElements[0]);
-  setTimeout(() => {
-    swiperElements[0].classList.add("swiper-show");
-  }, 20);
 }
 
 const displaySwiperElements = (value) => {
-  swiperWrap.innerHTML="";
-  swiperElements.forEach (element => {
+  swiperWrap.innerHTML = "";
+  swiperElements.forEach(element => {
     element.classList.remove("swiper-show");
   })
   //display 3 elements only on screens bigger that 1024px
@@ -60,16 +63,8 @@ const displaySwiperElements = (value) => {
     swiperWrap.appendChild(swiperElements[Number(value) === 0 ? swiperElements.length - 1 : Number(value) - 1]);
     swiperWrap.appendChild(swiperElements[Number(value)]);
     swiperWrap.appendChild(swiperElements[Number(value) >= swiperElements.length - 1 ? Number(value) + 1 - swiperElements.length : Number(value) + 1]);
-    setTimeout(() => {
-      swiperElements[Number(value) === 0 ? swiperElements.length - 1 : Number(value) - 1].classList.add("swiper-show");
-      swiperElements[Number(value)].classList.add("swiper-show");
-      swiperElements[Number(value) >= swiperElements.length - 1 ? Number(value) + 1 - swiperElements.length : Number(value) + 1].classList.add("swiper-show");
-    }, 20);
   } else {
     swiperWrap.appendChild(swiperElements[Number(value)]);
-    setTimeout(() => {
-      swiperElements[Number(value)].classList.add("swiper-show");
-    }, 20);
   }
   clearInterval(swipeTimer);
   swipeTimer = setInterval(swipeNext, 5000);
@@ -96,7 +91,7 @@ const swipeNext = () => {
         displaySwiperElements(radioElements[0].value);
       } else {
         radioElements[i + 1].checked = true;
-        displaySwiperElements(radioElements[i+1].value);
+        displaySwiperElements(radioElements[i + 1].value);
       }
       break;
     }
@@ -107,7 +102,7 @@ const swipeNext = () => {
 let swipeTimer = setInterval(swipeNext, 5000)
 
 // showing one or more elements depending on widow size
-window.addEventListener ("resize", () => {
+window.addEventListener("resize", () => {
   displaySwiperElements(value);
 })
 
@@ -130,18 +125,18 @@ const plus = document.querySelectorAll("#plus");
 const closeModal = document.querySelectorAll(".close");
 
 // When the user clicks the link button, open the link modal
-link.forEach ((element, index) => element.onclick = () => linkModal[index].style.display = "flex");
+link.forEach((element, index) => element.onclick = () => linkModal[index].style.display = "flex");
 
 // When the user clicks the plus button, open the plus modal
-plus.forEach ((element, index) => element.onclick = () => plusModal[index].style.display = "flex");
+plus.forEach((element, index) => element.onclick = () => plusModal[index].style.display = "flex");
 
 // When the user clicks on <span> (x), close the modal
-closeModal.forEach ((element, index) => element.onclick = () => modal[index].style.display = "none");
+closeModal.forEach((element, index) => element.onclick = () => modal[index].style.display = "none");
 
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  modal.forEach (element => {
+window.onclick = function (event) {
+  modal.forEach(element => {
     if (event.target == element) {
       element.style.display = "none";
     }

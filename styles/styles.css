@@ -750,7 +750,7 @@ img {
 .swiper-item-wrap {
   /* padding-top: 100%; */
   position: relative;
-  transition: all 2s ease-in-out;
+  /* transition: all 2s ease-in-out; */
 }
 
 .swiper-item {
@@ -822,8 +822,8 @@ img {
 .swiper-hidden {
   opacity: 0;
   filter: blur(5px);
-  transform: translateX(100%);
-  transition: all 2s ease-in-out;
+  transform: translateX(50px);
+  transition: all 500ms ease-in;
 }
 
 .swiper-show {
