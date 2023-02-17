@@ -111,30 +111,30 @@ window.addEventListener ("resize", () => {
   displaySwiperElements(value);
 })
 
-// Get the modal
-var modal = document.querySelectorAll(".modal");
+// Get all the modals
+const modal = document.querySelectorAll(".modal");
+
+// Get the link modals
+const linkModal = document.querySelectorAll(".link-modal");
 
 // Get the button that opens the modal
-var btn = document.querySelectorAll("#plus");
+const link = document.querySelectorAll("#link");
 
 // Get the <span> element that closes the modal
-var span = document.querySelectorAll(".close");
-
-console.log(modal, btn, span);
+const closeModal = document.querySelectorAll(".close");
 
 // When the user clicks the button, open the modal
-btn.onclick = function() {
-  modal[indexOf(btn)].style.display = "block";
+link.forEach ((element, index) => element.onclick = () => linkModal[index].style.display = "flex");
+
+// When the user clicks on <span> (x), close the modal
+closeModal.forEach ((element, index) => element.onclick = () => modal[index].style.display = "none");
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  modal.forEach (element => {
+    if (event.target == element) {
+      element.style.display = "none";
+    }
+  })
 }
-
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }

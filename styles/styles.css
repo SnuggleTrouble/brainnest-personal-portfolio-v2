@@ -550,52 +550,122 @@ img {
   margin: 0.3rem 0;
 }
 
-.portfolio-item-hover > div > a {
+.portfolio-item-hover > div > button {
+  background: none;
+  border: none;
   font-size: calc(0.9vw + 0.5rem);
   color: var(--color-light);
   margin: 0 0.3rem;
+  cursor: pointer;
 }
 
+.portfolio-item-hover > div > button:active {
+  transform: translateY(5px);
+}
+
+/*---------------------- Modal Section -----------------------*/
+
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 9994;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  -webkit-animation-name: fadeIn; /* Fade in the background */
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+  -webkit-animation-name: fadeIn;
   -webkit-animation-duration: 0.4s;
   animation-name: fadeIn;
-  animation-duration: 0.4s
+  animation-duration: 0.4s;
+  justify-content: center;
+  align-items: center;
 }
 
 .portfolio-item-description {
   position: fixed;
-  bottom: 0;
-  background-color: #fefefe;
-  width: 100%;
+  background-color: var(--color-bg-variant);
+  height: 80%;
+  width: 90%;
   -webkit-animation-name: fadeIn;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 2s;
   animation-name: fadeIn;
-  animation-duration: 0.4s
+  animation-duration: 2s;
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  padding: 3%;
+}
+
+.link-modal-image {
+  height: 90%;
+  width: 50%;
+}
+
+.link-modal-image > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.link-modal-description {
+  height: 90%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 3%;
+}
+
+.link-modal-description > h3 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  /* margin-bottom: 20px; */
+}
+
+.link-modal-description > p {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.link-modal-description > p:last-of-type {
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.link-modal-description > p > span {
+  font-weight: 500;
+}
+
+.link-modal-description > .portfolio-item-cta {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 -5%;
+}
+
+.link-modal-description > .portfolio-item-cta > a > i {
+  margin: 0 5%;
 }
 
 .close {
-  color: white;
-  float: right;
-  font-size: 28px;
+  color: var(--color-light-variation);
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 40px;
   font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
+  color: var(--color-primary);
   text-decoration: none;
   cursor: pointer;
+}
+
+.close:active {
+  transform: translateY(2px);
 }
 /*---------------------- Services Section -----------------------*/
 
@@ -887,16 +957,6 @@ img {
   }
 }
 
-@-webkit-keyframes slideIn {
-  from {bottom: -300px; opacity: 0}
-  to {bottom: 0; opacity: 1}
-}
-
-@keyframes slideIn {
-  from {bottom: -300px; opacity: 0}
-  to {bottom: 0; opacity: 1}
-}
-
 @-webkit-keyframes fadeIn {
   from {opacity: 0}
   to {opacity: 1}
@@ -952,6 +1012,10 @@ footer {
 
     .swiper-wrap {
       grid-template-columns: 1fr;
+    }
+
+    .link-modal-image {
+      display: none;
     }
 }
 /*=== Media Queries (Small Devices) ===*/
