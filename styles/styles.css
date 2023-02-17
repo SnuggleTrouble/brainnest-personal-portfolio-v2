@@ -556,8 +556,8 @@ img {
   gap: 2%;
   padding: 3%;
   border-radius: 15px;
-  border-bottom: 10px solid var(--color-primary);
-  box-shadow: 0 0 10px 5px var(--color-light-variation);
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 0 20px 5px var(--color-primary);
 }
 .link-modal-image {
   height: 90%;
@@ -608,22 +608,17 @@ img {
 .close {
   color: var(--color-primary);
   position: absolute;
-  display: inline-block;
   top: 0;
-  right: 20px;
-  font-size: 40px;
-  width: 48px;
-  height: 48px;
-  padding: 0 0 5px 0;
-  border-radius: 50%;
-  text-align: center;
+  line-height: 31.88px;
+  top: 30px;
+  right: 30px;
+  font-size: 60px;
   font-weight: bold;
 }
 .close:hover,
 .close:focus {
-  background-color: var(--color-bg);
-  border: 1px solid var(--color-primary-variant);
-  color: var(--color-primary);
+  -webkit-text-stroke: 1.5px var(--color-primary-variant);
+  color: var(--color-bg);
   text-decoration: none;
   cursor: pointer;
 }
@@ -694,7 +689,6 @@ img {
 }
 .swiper-item-wrap {
   position: relative;
-  /* transition: all 2s ease-in-out; */
 }
 .swiper-item {
   position: relative;
@@ -709,6 +703,7 @@ img {
 }
 .swiper-item > p {
   height: 220px;
+  width: 100%;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   position: relative;
