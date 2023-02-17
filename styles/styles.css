@@ -718,6 +718,7 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 4% 3%;
+  overflow: hidden;
 }
 .swiper-item > p::after {
   content: "";
