@@ -32,7 +32,7 @@ for (let i = 0; i < swiperElements.length; i++){
 
 //display 3 elements only on screens bigger that 1024px
 swiperWrap.innerHTML="";
-if (screen.width > 1024) {
+if (window.innerWidth > 1450) {
   //showing the last and first 2 swiper elements
   swiperWrap.appendChild(swiperElements[swiperElements.length - 1]);
   swiperWrap.appendChild(swiperElements[0]);
@@ -56,7 +56,7 @@ const displaySwiperElements = (value) => {
     element.classList.remove("swiper-show");
   })
   //display 3 elements only on screens bigger that 1024px
-  if (screen.width > 1024) {
+  if (window.innerWidth > 1450) {
     swiperWrap.appendChild(swiperElements[Number(value) === 0 ? swiperElements.length - 1 : Number(value) - 1]);
     swiperWrap.appendChild(swiperElements[Number(value)]);
     swiperWrap.appendChild(swiperElements[Number(value) >= swiperElements.length - 1 ? Number(value) + 1 - swiperElements.length : Number(value) + 1]);
@@ -117,14 +117,23 @@ const modal = document.querySelectorAll(".modal");
 // Get the link modals
 const linkModal = document.querySelectorAll(".link-modal");
 
-// Get the button that opens the modal
+// Get the plus modals
+const plusModal = document.querySelectorAll(".plus-modal");
+
+// Get the link button that opens the modal
 const link = document.querySelectorAll("#link");
+
+// Get the link button that opens the modal
+const plus = document.querySelectorAll("#plus");
 
 // Get the <span> element that closes the modal
 const closeModal = document.querySelectorAll(".close");
 
-// When the user clicks the button, open the modal
+// When the user clicks the link button, open the link modal
 link.forEach ((element, index) => element.onclick = () => linkModal[index].style.display = "flex");
+
+// When the user clicks the plus button, open the plus modal
+plus.forEach ((element, index) => element.onclick = () => plusModal[index].style.display = "flex");
 
 // When the user clicks on <span> (x), close the modal
 closeModal.forEach ((element, index) => element.onclick = () => modal[index].style.display = "none");

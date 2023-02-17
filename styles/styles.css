@@ -600,6 +600,7 @@ img {
   animation-duration: 2s;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2%;
   padding: 3%;
   border-radius: 15px;
@@ -653,6 +654,13 @@ img {
 
 .link-modal-description > .portfolio-item-cta > a > i {
   margin: 0 3%;
+}
+
+.plus-modal img {
+  height: 100%;
+  width: 70%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .close {
@@ -739,14 +747,13 @@ img {
 }
 
 .swiper-item-wrap {
-  /* display: none; */
- /*  padding-top: 100%; */
+  /* padding-top: 100%; */
   position: relative;
   transition: all 2s ease-in-out;
 }
 
 .swiper-item {
- /*  position: absolute; */
+  /* position: absolute; */
   position: relative;
   top: 0;
   bottom: 0;
@@ -1028,6 +1035,12 @@ button[type="submit"]:hover {
   .about-details>article>aside>* {
     min-width: 100%;
   }
+  .swiper-wrap {
+    grid-template-columns: 1fr;
+  }
+  .link-modal-image {
+    display: none;
+  }
 }
 @media screen and (max-width: 1170px) {
   main {
@@ -1062,14 +1075,6 @@ button[type="submit"]:hover {
     .facts>aside>figure {
       max-width: 40%;
     }
-
-    .swiper-wrap {
-      grid-template-columns: 1fr;
-    }
-
-    .link-modal-image {
-      display: none;
-    }
 }
 /*=== Media Queries (Small Devices) ===*/
 @media screen and (max-width: 660px) {
@@ -1090,9 +1095,5 @@ button[type="submit"]:hover {
     }
     .resume>* {
       max-width: 100%;
-    }
-
-    .swiper-wrap {
-      grid-template-columns: 1fr;
     }
   }
