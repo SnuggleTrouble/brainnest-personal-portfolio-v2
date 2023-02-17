@@ -202,7 +202,7 @@ img {
   position: relative;
   white-space: nowrap;
 }
-.av-menu a,
+.nav-menu a,
 .nav-menu a:focus {
   display: flex;
   align-items: center;
@@ -765,7 +765,6 @@ img {
   transform: translateX(0);
 }
 /*---------------------- Contact Section ------------------------*/
-
 .contact {
   padding-bottom: 130px;
 }
