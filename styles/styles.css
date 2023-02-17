@@ -641,11 +641,11 @@ img {
 .link-modal-description > .portfolio-item-cta {
   font-size: 1.5rem;
   font-weight: 700;
-  margin: 0 -5%;
+  margin: 0 -3%;
 }
 
 .link-modal-description > .portfolio-item-cta > a > i {
-  margin: 0 5%;
+  margin: 0 3%;
 }
 
 .close {
