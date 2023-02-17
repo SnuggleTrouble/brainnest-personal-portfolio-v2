@@ -1034,6 +1034,9 @@ button[type="submit"]:hover {
   .link-modal-image {
     display: none;
   }
+  .services-container {
+      grid-template-columns: 2fr;
+    }
 }
 @media screen and (max-width: 1170px) {
   main {
@@ -1068,6 +1071,9 @@ button[type="submit"]:hover {
     .facts>aside>figure {
       max-width: 40%;
     }
+    .services-container {
+      grid-template-columns: 2fr;
+    }
 }
 /*=== Media Queries (Small Devices) ===*/
 @media screen and (max-width: 660px) {
@@ -1088,5 +1094,8 @@ button[type="submit"]:hover {
     }
     .resume>* {
       max-width: 100%;
+    }
+    .services-container {
+      grid-template-columns: 1fr;
     }
   }
