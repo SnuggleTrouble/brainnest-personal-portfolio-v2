@@ -604,7 +604,8 @@ img {
   gap: 2%;
   padding: 3%;
   border-radius: 15px;
-  box-shadow: 0 0 20px 8px var(--color-primary);
+  border-bottom: 10px solid var(--color-primary);
+  box-shadow: 0 0 10px 5px var(--color-light-variation);
 }
 
 .link-modal-image {
@@ -664,7 +665,7 @@ img {
 }
 
 .close {
-  color: var(--color-light-variation);
+  color: var(--color-primary);
   position: absolute;
   top: 0;
   right: 20px;
@@ -674,7 +675,7 @@ img {
 
 .close:hover,
 .close:focus {
-  color: var(--color-primary);
+  color: var(--color-primary-variant);
   text-decoration: none;
   cursor: pointer;
 }
