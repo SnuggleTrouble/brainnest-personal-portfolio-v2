@@ -169,6 +169,10 @@ img {
 #header .profile h3 a:hover {
   color: var(--color-primary);
 }
+#header .profile .social-links {
+  display: flex;
+  justify-content: center;
+}
 #header .profile .social-links a {
   background: var(--color-dark-variation);
   color: var(--color-light);
@@ -178,7 +182,7 @@ img {
   height: 36px;
   padding: 8px 0;
   border-radius: 50%;
-  margin-right: 5px;
+  margin-right: 0.7rem;
   text-align: center;
   line-height: 1;
 }
@@ -866,9 +870,26 @@ button[type="submit"]:hover {
 
 
 /*---------------------- Footer Section -------------------------*/
-footer {
-  margin-left: 150px;
-  display: flex;
+#footer {
+  font-size: 0.8rem;
+  z-index: 3;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 300;
+  padding: 15px;
+  color: var(--color-light);
+  background: var(--color-dark);
+}
+#footer .copyright {
+  text-align: center;
+}
+#footer .credits, .credits p {
+  text-align: center;
+  font-size: 0.8rem;
+}
+#footer .credits a:hover {
+  color: var(--color-light);
 }
 /*---------------------- Media Queries --------------------------*/
 /*=== Media Queries (Animations) ===*/
@@ -897,10 +918,9 @@ footer {
         grid-template-columns: 1fr 1fr;
         gap: 1.2rem;
     }
-    #header {
+    #header, #footer {
       display: none;
     }
-
     .about-details {
       flex-direction: column;
     }
