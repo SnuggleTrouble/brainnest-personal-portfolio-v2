@@ -67,7 +67,7 @@ const displaySwiperElements = (value) => {
     swiperWrap.appendChild(swiperElements[Number(value)]);
   }
   clearInterval(swipeTimer);
-  swipeTimer = setInterval(swipeNext, 5000);
+  swipeTimer = setInterval(swipeNext, 3000);
 }
 
 //value is used to store the last event on the radio button click
@@ -99,7 +99,7 @@ const swipeNext = () => {
 }
 
 // timer that every 5s swipes
-let swipeTimer = setInterval(swipeNext, 5000)
+let swipeTimer = setInterval(swipeNext, 3000)
 
 // showing one or more elements depending on widow size
 window.onresize = () => displaySwiperElements(value);
