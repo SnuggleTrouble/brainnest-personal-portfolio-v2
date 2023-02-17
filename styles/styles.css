@@ -31,7 +31,7 @@
   --color-light-variation: #A8A9B4;
 
   --transition-primary: all 500ms ease;
-  --transition-primary-secondary: all 1 ease;
+  --transition-secondary: all 1s ease;
 
   --container-width-xxl: 60%;
   --container-width-large: 75%;
@@ -565,9 +565,52 @@ img {
 .services {
   margin-top: 3rem;
 }
-.services>p {
+.section-info p {
   margin: 1rem 0;
 }
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.services-item {
+  margin: 0 1rem 1rem 0;
+}
+.services-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  background: var(--color-primary);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: var(--transition-primary);
+}
+.services-item:hover .services-icon {
+  background: var(--color-bg-variant);
+  border: 1px solid var(--color-primary-variant);
+}
+.services-icon i {
+  color: var(--color-light);
+  font-size: 20px;
+}
+.services-item:hover .services-icon i {
+  color: var(--color-primary);
+}
+.services-title {
+  font-weight: 700;
+  margin-left: 80px;
+}
+.services-title a {
+  color: var(--color-dark);
+}
+.services-title a:hover {
+  color: var(--color-primary);
+}
+.services-description {
+  margin-left: 80px;
+}
+
 /*---------------------- Testimonials Section -------------------*/
 .testimonials {
   margin-top: 3rem;
