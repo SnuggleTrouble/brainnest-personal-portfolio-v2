@@ -596,6 +596,8 @@ img {
   align-items: center;
   gap: 2%;
   padding: 3%;
+  border-radius: 15px;
+  box-shadow: 0 0 20px 8px var(--color-primary);
 }
 
 .link-modal-image {
@@ -621,7 +623,6 @@ img {
 .link-modal-description > h3 {
   font-size: 1.7rem;
   font-weight: 700;
-  /* margin-bottom: 20px; */
 }
 
 .link-modal-description > p {
