@@ -30,7 +30,7 @@
   --color-light: #fff;
   --color-light-variation: #A8A9B4;
 
-  --transition-primary: all 500ms ease;
+  --transition-primary: all ease 0.5s;
   --transition-secondary: all 1s ease;
 
   --container-width-xxl: 60%;
@@ -1023,6 +1023,12 @@ button[type="submit"]:hover {
 @media (prefers-reduced-motion) {
   .hidden {
     transition: none;
+  }
+}
+/*=== Media Queries (XXL Devices) ===*/
+@media screen and (min-width: 2048px) {
+  .container {
+    /* width: var(--container-width-xxl); */
   }
 }
 /*=== Media Queries (Medium Devices) ===*/
