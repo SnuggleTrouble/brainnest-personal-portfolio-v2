@@ -87,11 +87,12 @@ h2::after {
 }
 h3 {
   font-weight: 600;
+  font-size: 1.5rem;
 }
-h3,
 h4,
 p {
-  font-size:  calc(0.6vw + 0.5rem);
+  /* font-size:  calc(0.6vw + 0.5rem); */
+  font-size: 1rem;
 }
 a {
   color: var(--color-primary);
@@ -237,7 +238,7 @@ img {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url(../assets/images/hero-bg.jpg) top center;
+  background: url(../assets/images/grzegorz-walczak-yoIIPcrWhjI-unsplash.jpg) top center;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -281,7 +282,7 @@ img {
   color: #fff;
   padding-bottom: 4px;
   letter-spacing: 1px;
-  border-bottom: 3px solid #149ddd;
+  border-bottom: 3px solid var(--color-primary);
 }
 
 @media (min-width: 1024px) {
@@ -322,9 +323,11 @@ img {
 .about-details>article>* {
   margin-bottom: 1rem;
 }
-.about-details>article>aside {
+.about-details>article>aside,
+.skills-ul>ul {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 .about-details>article>aside>* {
   width: 50%;
@@ -332,7 +335,8 @@ img {
 .about-details>article>aside>ul {
   margin: 1.5rem 0;
 }
-.about-details ul>li:before {
+.about-details ul>li:before,
+.skills ul>li:before {
   content: '> ';
   color: var(--color-primary)
 }
@@ -345,6 +349,10 @@ img {
 .facts>p,
 .skills>p {
   margin: 1rem 0;
+}
+.skills>div>ul>* {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
 }
 .facts>aside {
   display: flex;
@@ -365,17 +373,6 @@ img {
 .facts>aside>figure>figcaption>p:first-child {
   font-size: 2rem;
   font-weight: bold;
-}
-.skills>div>ul {
-  display: flex;
-  flex-wrap: wrap;
-}
-.skills>div>ul>* {
-  font-size: 1.5rem;
-  padding: 0.5rem;
-}
-.skills>div>ul>li>i {
-  font-size: 1.5rem;
 }
 /*---------------------- Experience Section ---------------------*/
 .experience {
@@ -428,7 +425,12 @@ img {
 }
 
 /*---------------------- Portfolio Section ----------------------*/
-
+.portfolio {
+  margin-top: 3rem;
+}
+.portfolio>p {
+  margin: 1rem 0;
+}
 .portfolio-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -560,9 +562,19 @@ img {
   display: none;
 }
 /*---------------------- Services Section -----------------------*/
-
+.services {
+  margin-top: 3rem;
+}
+.services>p {
+  margin: 1rem 0;
+}
 /*---------------------- Testimonials Section -------------------*/
-
+.testimonials {
+  margin-top: 3rem;
+}
+.testimonials p {
+  margin: 1rem 0;
+}
 .swiper-wrap {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -572,13 +584,14 @@ img {
 
 .swiper-item-wrap {
   /* display: none; */
-  padding-top: 100%;
+ /*  padding-top: 100%; */
   position: relative;
   transition: all 2s ease-in-out;
 }
 
 .swiper-item {
-  position: absolute;
+ /*  position: absolute; */
+  position: relative;
   top: 0;
   bottom: 0;
   left: 0;
@@ -596,7 +609,7 @@ img {
   border-radius: 20px;
   position: relative;
   background-color: var(--color-bg-variant);
-  font-size: calc(0.5vw + 0.2rem);
+  /* font-size: calc(0.5vw + 0.2rem); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -863,7 +876,18 @@ footer {
   }
 }
 /*=== Media Queries (Medium Devices) ===*/
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1450px) {
+  main {
+    margin-left: 200px;
+  }
+  .about-details>article>aside {
+    flex-direction: column;
+  }
+  .about-details>article>aside>* {
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 1170px) {
   main {
     margin-left: 0;
   }
@@ -888,6 +912,12 @@ footer {
     .about-details>article>h3 {
       margin-top: 1rem;
     }
+    .about-details>article>aside {
+      flex-direction: row;
+    }
+    .about-details>article>aside>* {
+      width: 50%;
+    }
     .facts>aside>figure {
       max-width: 40%;
     }
@@ -902,11 +932,12 @@ footer {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-    .about-details>article>aside {
-      display: flex;
+    .about-details>article>aside,
+    .skills-ul>ul {
       flex-direction: column;
     }
-    .about-details>article>aside>ul {
+    .about-details>article>aside>ul,
+    .skills-ul>* {
       width: 100%;
     }
     .resume {
