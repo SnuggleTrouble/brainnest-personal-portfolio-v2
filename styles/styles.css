@@ -51,6 +51,35 @@ body {
   font-family: "Roboto", sans-serif;
   line-height: 1.7;
 }
+#up-button {
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.7rem;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  cursor: pointer;
+  z-index: 5001;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease-in-out;
+}
+#up-button.show {
+  opacity: 1;
+  visibility: visible;
+}
+#up-button:hover {
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary-variant);
+}
 main {
   margin-left: 300px;
 }

@@ -140,3 +140,19 @@ window.onclick = function (event) {
     }
   })
 }
+
+//scroll to top
+var upButton = document.querySelector("#up-button");
+
+window.onscroll = () => {
+  if (window.scrollY > 300) {
+    upButton.classList.add('show')
+  } else {
+    upButton.classList.remove('show');
+  }
+};
+
+upButton.onclick = () => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
