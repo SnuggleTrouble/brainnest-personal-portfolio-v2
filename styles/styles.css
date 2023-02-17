@@ -708,15 +708,16 @@ img {
   justify-content: center;
 }
 .swiper-item > p {
-  height: 40%;
+  height: 220px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
   border-radius: 20px;
   position: relative;
   background-color: var(--color-bg-variant);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4% 3%;
 }
 .swiper-item > p::after {
   content: "";

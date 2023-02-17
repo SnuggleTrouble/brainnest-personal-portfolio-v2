@@ -102,9 +102,7 @@ const swipeNext = () => {
 let swipeTimer = setInterval(swipeNext, 5000)
 
 // showing one or more elements depending on widow size
-window.addEventListener("resize", () => {
-  displaySwiperElements(value);
-})
+window.onresize = () => displaySwiperElements(value);
 
 // Get all the modals
 const modal = document.querySelectorAll(".modal");
