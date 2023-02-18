@@ -101,8 +101,17 @@ const swipeNext = () => {
 // timer that every 5s swipes
 let swipeTimer = setInterval(swipeNext, 3000)
 
+const mobileNavToggle = document.querySelector("#mobile-nav-toggle");
+const navbar = document.querySelector("header");
 // showing one or more elements depending on widow size
-window.onresize = () => displaySwiperElements(value);
+window.onresize = () => {
+  displaySwiperElements(value);
+  if (window.innerWidth > 1170) {
+    navbar.style.display = "block";
+  } else {
+    navbar.style.display = "none";
+  }
+};
 
 // Get all the modals
 const modal = document.querySelectorAll(".modal");
@@ -156,9 +165,6 @@ upButton.onclick = () => {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
-const mobileNavToggle = document.querySelector("mobile-nav-toggle");
-const navbar = document.querySelector("header");
 
 mobileNavToggle.addEventListener("click", () => {
   if (navbar.style.display === "none") {

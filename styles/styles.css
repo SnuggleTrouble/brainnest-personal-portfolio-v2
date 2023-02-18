@@ -176,7 +176,7 @@ img {
   width: 300px;
   padding: 0 15px;
   background: var(--color-dark);
-  z-index: 2;
+  z-index: 4999;
   transition: var(--transition-primary);
 }
 #header .profile-img {
