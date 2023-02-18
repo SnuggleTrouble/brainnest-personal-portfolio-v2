@@ -51,6 +51,35 @@ body {
   font-family: "Roboto", sans-serif;
   line-height: 1.7;
 }
+#up-button {
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.7rem;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  cursor: pointer;
+  z-index: 5001;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease-in-out;
+}
+#up-button.show {
+  opacity: 1;
+  visibility: visible;
+}
+#up-button:hover {
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary-variant);
+}
 main {
   margin-left: 300px;
 }
@@ -556,8 +585,8 @@ img {
   gap: 2%;
   padding: 3%;
   border-radius: 15px;
-  border-bottom: 10px solid var(--color-primary);
-  box-shadow: 0 0 10px 5px var(--color-light-variation);
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 0 20px 5px var(--color-primary);
 }
 .link-modal-image {
   height: 90%;
@@ -608,22 +637,17 @@ img {
 .close {
   color: var(--color-primary);
   position: absolute;
-  display: inline-block;
   top: 0;
-  right: 20px;
-  font-size: 40px;
-  width: 48px;
-  height: 48px;
-  padding: 0 0 5px 0;
-  border-radius: 50%;
-  text-align: center;
+  line-height: 31.88px;
+  top: 30px;
+  right: 30px;
+  font-size: 60px;
   font-weight: bold;
 }
 .close:hover,
 .close:focus {
-  background-color: var(--color-bg);
-  border: 1px solid var(--color-primary-variant);
-  color: var(--color-primary);
+  -webkit-text-stroke: 1.5px var(--color-primary-variant);
+  color: var(--color-bg);
   text-decoration: none;
   cursor: pointer;
 }
@@ -694,7 +718,6 @@ img {
 }
 .swiper-item-wrap {
   position: relative;
-  transition: all 2s ease-in-out;
 }
 .swiper-item {
   position: relative;
@@ -708,15 +731,18 @@ img {
   justify-content: center;
 }
 .swiper-item > p {
-  height: 40%;
+  height: 220px;
+  width: 100%;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
   border-radius: 20px;
   position: relative;
   background-color: var(--color-bg-variant);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4% 3%;
+  overflow: hidden;
 }
 .swiper-item > p::after {
   content: "";
@@ -756,8 +782,8 @@ img {
 .swiper-hidden {
   opacity: 0;
   filter: blur(5px);
-  transform: translateX(100%);
-  transition: all 2s ease-in-out;
+  transform: translateX(50px);
+  transition: all 500ms ease-in;
 }
 .swiper-show {
   opacity: 1;
