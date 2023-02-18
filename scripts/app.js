@@ -156,3 +156,10 @@ upButton.onclick = () => {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+const mobileNavToggle = document.getElementsByClassName("mobile-nav-toggle")[0]
+const navbar = document.getElementsByClassName("nav-menu")[0]
+
+mobileNavToggle.addEventListener("click", () => {
+  navbar.classList.toggle("active")
+})

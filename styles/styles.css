@@ -69,7 +69,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 1s ease-in-out;
+  transition: var(--transition-primary);
 }
 #up-button.show {
   opacity: 1;
@@ -258,6 +258,36 @@ img {
 .nav-menu .active:focus i,
 .nav-menu li:hover > a i {
   color: var(--color-primary);
+}
+/*---------------------- Mobile Navigation ---------------------*/
+.mobile-nav-toggle {
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.7rem;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  cursor: pointer;
+  z-index: 3;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-primary);
+}
+.mobile-nav-toggle {
+  overflow: hidden;
+}
+.mobile-nav-toggle:hover {
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary-variant);
+}
+.mobile-nav-toggle .active {
+  display: inline-flex;
 }
 /*---------------------- Hero Section --------------------------*/
 #hero {
@@ -981,6 +1011,13 @@ button[type="submit"]:hover {
   }
 }
 @media screen and (max-width: 1170px) {
+  .mobile-nav-toggle {
+    display: inline-flex;
+  }
+  #header,
+  #footer {
+    display: none;
+  }
   .container {
     width: var(--container-width-small);
   }
@@ -990,10 +1027,6 @@ button[type="submit"]:hover {
   .portfolio-container {
     grid-template-columns: 1fr 1fr;
     gap: 1.2rem;
-  }
-  #header,
-  #footer {
-    display: none;
   }
   .about-details {
     flex-direction: column;
