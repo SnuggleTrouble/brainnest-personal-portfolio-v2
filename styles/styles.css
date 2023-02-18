@@ -818,9 +818,6 @@ img {
   transform: translateX(0);
 }
 /*---------------------- Contact Section ------------------------*/
-.contact {
-  padding-bottom: 130px;
-}
 .contact .info {
   margin-top: 1.5rem;
   padding: 30px;
@@ -939,7 +936,7 @@ button[type="submit"]:hover {
 /*---------------------- Footer Section -------------------------*/
 #footer {
   font-size: 0.8rem;
-  z-index: 3;
+  z-index: 4999;
   position: fixed;
   left: 0;
   bottom: 0;
