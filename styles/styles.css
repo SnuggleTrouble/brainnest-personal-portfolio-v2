@@ -35,7 +35,6 @@
 
   --container-width-xxl: 60%;
   --container-width-large: 75%;
-  --container-width-medium: 85%;
   --container-width-small: 90%;
 }
 html {
@@ -260,14 +259,14 @@ img {
   color: var(--color-primary);
 }
 /*---------------------- Mobile Navigation ---------------------*/
-.mobile-nav-toggle {
+#mobile-nav-toggle {
   height: 3rem;
   width: 3rem;
   font-size: 1.7rem;
   position: fixed;
   top: 20px;
   right: 20px;
-  border: 0;
+  border: none;
   border-radius: 50%;
   background-color: var(--color-primary);
   color: var(--color-bg);
@@ -278,16 +277,14 @@ img {
   justify-content: center;
   transition: var(--transition-primary);
 }
-.mobile-nav-toggle {
-  overflow: hidden;
+#mobile-nav-toggle.show {
+  opacity: 1;
+  visibility: visible;
 }
-.mobile-nav-toggle:hover {
+#mobile-nav-toggle:hover {
   background-color: var(--color-bg);
   color: var(--color-primary);
   border: 1px solid var(--color-primary-variant);
-}
-.mobile-nav-toggle .active {
-  display: inline-flex;
 }
 /*---------------------- Hero Section --------------------------*/
 #hero {
@@ -1011,7 +1008,7 @@ button[type="submit"]:hover {
   }
 }
 @media screen and (max-width: 1170px) {
-  .mobile-nav-toggle {
+  #mobile-nav-toggle {
     display: inline-flex;
   }
   #header,
