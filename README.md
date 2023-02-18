@@ -12,11 +12,15 @@ This project was created in the Brainnest Advanced Frontend Development course. 
 
 ## Features
 
-- Layout with CSS grid
+- A sidemounted navbar which can be used to navigate the website. Can be toggled on and off based on screen width.
+- Each section will load in from the side when scrolling throughout the page.
+- Portfolio uses modals that allows you to enchance the size of an image or view more information about each project.
+- Contact section has google maps integration showing an address.
 
 ## Technologies
 - HTML
 - CSS
+- JavaScript
 - Git
 
 ## This project was a team effort by:
