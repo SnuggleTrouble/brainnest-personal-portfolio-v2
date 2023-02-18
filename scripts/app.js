@@ -142,13 +142,19 @@ closeModal.forEach((element, index) => element.onclick = () => modal[index].styl
 
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  modal.forEach(element => {
+window.onclick = (event) => {
+  modal.forEach((element) => {
     if (event.target == element) {
       element.style.display = "none";
     }
-  })
-}
+  });
+  if (
+    window.innerWidth <= 1170 &&
+    event.target != (navbar && mobileNavToggle && mobileNavToggle.childNodes[1])
+  ) {
+    navbar.style.display = "none";
+  }
+};
 
 //scroll to top
 var upButton = document.querySelector("#up-button");
