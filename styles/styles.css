@@ -876,14 +876,17 @@ label {
 }
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+textarea {
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 3px;
   margin-bottom: 10px;
 }
+button[type="submit"] {
+    width: 100%;
+  }
 /* Set styles for the submit button */
 button[type="submit"] {
   display: block;
@@ -900,20 +903,6 @@ button[type="submit"]:hover {
   background-color: var(--color-bg);
   border: 1px solid var(--color-primary-variant);
   color: var(--color-primary);
-}
-/* Set styles for the form on smaller screens */
-@media screen and (max-width: 480px) {
-  form {
-    max-width: none;
-    padding: 10px;
-  }
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  input[type="checkbox"],
-  button[type="submit"] {
-    width: 100%;
-  }
 }
 @-webkit-keyframes animate-loading {
   0% {
